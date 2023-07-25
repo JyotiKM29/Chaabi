@@ -1,0 +1,134 @@
+@import './variable.module';
+
+// button
+
+@mixin button{
+    line-height: clamp(1rem , 1.4rem , 2rem);
+    padding: .8em 1.4rem;
+    border: none;
+    border-radius: 999rem;
+    font-size: clamp(.8rem , 1rem , 1.8rem);
+    font-weight: light;
+    color: $color-white;
+    
+    background-color: $color-secondary;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+//Typography
+%primaryHeading {
+    
+    color:$color-secondary;
+}
+
+@mixin heading{
+    @extend %primaryHeading;
+    font-size:clamp(2rem , 8vh , 14vh);
+    line-height:clamp(1.8rem , 8.5vh , 14.5vh);
+    font-weight: 600;
+}
+
+@mixin largeheading{
+    @extend %primaryHeading;
+    font-size:clamp(10vw , 15vw , 25vw);
+    line-height:clamp(10vw , 15vw , 25vw);
+    // line-height:clamp(15vw , 25vw , 30vw);
+    letter-spacing: .1px;
+    font-weight: bolder;
+   
+    white-space: nowrap;
+}
+
+
+@mixin para{
+    
+    font-size:clamp(.6rem , 2.5vh , 4vh);
+    line-height:clamp(.6rem , 2.5vh , 4.5vh);
+    font-weight: 500;
+    letter-spacing: .05rem;
+    color: $color-secondary;
+}
+
+
+
+
+
+// //////////////////////////////
+
+
+
+
+@mixin secondaryheading{
+    font-size: clamp(2.2rem , 1.6vw , 6rem);
+    font-weight: 600;
+    line-height: clamp(3.3rem , 1.8vw , 6.6rem);
+    color: $color-neutral-light;
+}
+
+@mixin subHeading{
+    font-family: $code-font-style;
+    font-size: 1.6rem;
+    font-weight: lighter;
+    line-height: 1.76rem;
+    letter-spacing: .16rem;
+    color:$color-secondary-light;
+}
+
+@mixin codestyle{
+    font-family: $code-font-style;
+    font-size: 1.3rem;
+    font-weight: 100;
+    // line-height: 1.76rem;
+    // letter-spacing: .16rem;
+    
+}
+
+@mixin para{
+    
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 2.4rem;
+    letter-spacing: .05rem;
+    color: $color-secondary;
+}
+
+
+
+
+
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) { @content };    //600px
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) { @content };     //900px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) { @content };    //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) { @content };    //1800
+    }
+}
+

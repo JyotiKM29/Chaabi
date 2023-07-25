@@ -1,0 +1,13 @@
+@import '../Base/variable.module';
+@import '../Base/mixins.module';
+
+.navbar{
+    min-height: 5%;
+    padding:1% 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__button{
+        @include button;
+    }
+}
