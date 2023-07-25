@@ -1,4 +1,4 @@
-import Cards from "@/components/cards";
+import Cards from "@/components/Cards";
 import styles from "../styles/pages/home.module.scss";
 
 const Home = () => {
