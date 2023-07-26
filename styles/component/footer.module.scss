@@ -1,45 +1,123 @@
-@import '../Base/variable.module';
-@import '../Base/mixins.module';
+@import "../Base/variable.module";
+@import "../Base/mixins.module";
 
-.footer{
-    padding: 10% 5%;
-    padding-bottom: 5%;
-    &__top{
-        background-color:$color-white;
+.footer {
+  padding: 10% 5%;
+  padding-bottom: 5%;
+  &__top {
+    background-color: $color-white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+    padding: 2em;
+    border-radius: 4rem;
+    h4 {
+      font-size: 1rem;
+      color: $color-secondary;
+      font-weight: bold;
+      padding-bottom: 1.4em;
+    }
+    p {
+      font-size: 1rem;
+      color: $color-secondary;
+      font-weight: light;
+    }
+  }
+  &__bottom {
+    background-color: $color-white;
+    color: $color-secondary;
+    padding: 1.2em 4em;
+    border-radius: 2rem;
+    min-height: 60vh;
+
+    &__upper {
+      display: flex;
+
+      height: 40%;
+
+      &_logo {
+        padding: 1% 4%;
+
+        height: 100%;
+        //   display: flex;
+        flex: 1;
+        //   flex-direction: column;
+        //  justify-content: space-between;
+        h1 {
+          font-size: 6rem;
+          line-height: 5.6rem;
+          padding: 0;
+        }
+        span {
+          font-size: 1.6rem;
+          line-height: 1rem;
+          font-weight: 300;
+          padding: 0 0.6em;
+        }
+      }
+
+      &_list {
+        flex: 1;
+        padding: 1% 4%;
+
+        h3 {
+          font-size: 2rem;
+        }
+
+        h5 {
+          font-size: 1.2rem;
+
+          font-weight: 400;
+
+          padding: 1em 0;
+        }
+      }
+    }
+
+    &__lower {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4%;
+
+      .button {
+        button {
+          @include button;
+        }
+      }
+
+      .social {
         display: flex;
-        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        margin-bottom: .8em;
-        padding: 1.2em;
-        border-radius: 4rem;
-        h4{
-            font-size: 1rem;
-            color: $color-secondary;
-            font-weight: bold;
-            padding-bottom: .8em;
-        }
-        p{
-            font-size: 1rem;
-            color: $color-secondary;
-            font-weight: light;
-        }
+        border-radius: 9rem;
 
+        Link {
+          margin: 1rem;
+        }
+      }
     }
-    &__bottom{
-        background-color:$color-white;
-        display: flex;
-        padding: 1.2em;
-        border-radius: 2rem;
-        height: 60vh;
 
-        &_logo{
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-         justify-content: space-between;
-        // align-content: space-between;
-
-        }
+    .hr{
+      
+      color:#333333ab;
     }
+
+    .rights{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2em 0;
+
+      &__left{
+
+        span{
+          padding: 2em;
+          padding-left: 0;
+        }
+      }
+     
+    }
+  }
 }

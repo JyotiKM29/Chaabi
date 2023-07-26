@@ -4,7 +4,7 @@
 
 @mixin button{
     line-height: clamp(1rem , 1.4rem , 2rem);
-    padding: .8em 1.4rem;
+    padding: 1em 1.8rem;
     border: none;
     border-radius: 999rem;
     font-size: clamp(.8rem , 1rem , 1.8rem);
@@ -25,9 +25,9 @@
 
 @mixin heading{
     @extend %primaryHeading;
-    font-size:clamp(2rem , 8vh , 14vh);
-    line-height:clamp(1.8rem , 8.5vh , 14.5vh);
-    font-weight: 600;
+    font-size:clamp(2rem , 7vh , 12vh);
+    line-height:clamp(1.8rem , 7.5vh , 12.5vh);
+    font-weight: 500;
 }
 
 @mixin largeheading{
@@ -44,9 +44,9 @@
 
 @mixin para{
     
-    font-size:clamp(.6rem , 2.5vh , 4vh);
-    line-height:clamp(.6rem , 2.5vh , 4.5vh);
-    font-weight: 500;
+    font-size:1.5rem;
+    // line-height:clamp(.6rem , 2vh , 3vh);
+    font-weight: 300;
     letter-spacing: .05rem;
     color: $color-secondary;
 }

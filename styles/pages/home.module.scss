@@ -1,53 +1,57 @@
-@import '../Base/variable.module';
-@import '../Base/mixins.module';
+@import "../Base/variable.module";
+@import "../Base/mixins.module";
 
-.home{
+.home {
+  display: flex;
+  padding: 2em;
+  .homeleft {
+    padding: 5%;
+    width: 50%;
+    &__heading {
+      @include heading;
+      span {
+        white-space: nowrap;
+      }
+    }
+    &__subheading {
+      margin: 4% 0;
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.05rem;
+      color: $color-secondary;
+      // @include para;
+    }
+
+    &__button {
+      margin-top: 4%;
+      @include button;
+    }
+  }
+
+  @include respond(tab-land) {
     display: flex;
-    padding: 2em;
-    .homeleft{
-        padding: 10% 5%;
-        width: 50%;
-        &__heading{
-            @include heading;
-            span{
-                white-space: nowrap;
-            }
-        }
-        &__subheading{
-            @include para;
-        }
-        
-        &__button{
-            @include button;
-        }
+    flex-direction: column;
+    .homeleft {
+      width: 100%;
+      padding: 0% 5%;
     }
-
-    @include respond (tab-land){
-        display: flex;
-        flex-direction: column;
-        .homeleft{
-            width: 100%;
-            padding: 0% 5%;
-
-        }
-    }
+  }
 }
-
-
 
 // it works
 
-.itWork{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    h2{
-        @include largeheading;
-    }
+.itWork {
+    margin: 25% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    @include largeheading;
+  }
 }
 
 // Work
 
-.card{
-   padding: 6%;
+.card {
+  padding: 6%;
 }
