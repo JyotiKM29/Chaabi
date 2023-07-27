@@ -2,6 +2,7 @@
 @import "../Base/mixins.module";
 
 .home {
+ 
   display: flex;
   padding: 2em;
   .homeleft {
@@ -41,17 +42,33 @@
 // it works
 
 .itWork {
-    margin: 25% 0;
+  margin-top: 25%;
+  // margin-bottom: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  position: relative;
   h2 {
+    position: absolute;
     @include largeheading;
   }
+
+  .testimonialcards{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+
+  overflow: scroll;
+  }
+
 }
 
-// Work
+///////////////////////////////////////// Work ///////////////////
+.cards{
+  margin-top:25% ;
+  height: 100vh;
+  width: 100vw;
 
-.card {
-  padding: 6%;
+  overflow: scroll;
 }

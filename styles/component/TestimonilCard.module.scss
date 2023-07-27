@@ -1,0 +1,84 @@
+$cards: 4;
+$cardHeight: 47vh;
+$cardTopPadding:1.5em;
+$cardMargin: 1vw;
+
+.container{
+   height: 100vh;
+   // position: relative;
+   width: 35%;
+   margin: 0 auto;
+   // background: red;
+
+   .cards{
+       // background-color: red;
+       list-style: none;
+       padding-left: 0;
+       display: grid;
+       grid-template-columns: 1fr;
+       grid-template-rows:repeat($cards , $cardHeight);
+       gap: $cardMargin;
+       padding-bottom: calc($cards * $cards) + 10vh;
+      
+       margin-bottom: $cardMargin;
+
+
+   
+
+
+      
+
+       #card1{
+           --index: 1;
+       }
+
+       #card2{
+           --index: 2;
+       }
+
+       #card3{
+           --index: 3;
+       }
+
+       #card4{
+           --index: 4;
+       }
+       #card5{
+           --index: 5;
+       }
+
+
+   .card{
+       position: sticky;
+       top:20vh;
+       padding-top: calc(var(--index)* $cardTopPadding);
+       box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.15);
+       border-radius: 50px;
+       rotate: -10deg;
+
+ 
+ 
+     }
+ 
+
+     .card_body {
+       height: 100%;
+       // background-color: red;
+       box-sizing: border-box;
+       padding: 30px;
+       border-radius: 50px;
+       box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+       height: $cardHeight;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       transition: all 0.5s;
+ 
+       h2 {
+         font-size: 2.5em;
+       }
+     }
+   }
+
+
+}
